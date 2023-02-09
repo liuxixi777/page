@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>西西写了一下午flex的成果</title>
+    <style>
+        body {
+            margin: 0px;
+            padding: 0px;
+        }
+        .box {
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            display: flex;
+            flex-direction: column; 
+        }
+        .flex-1 {
+            flex: 1;
+            padding: 10px 10px;
+            /* background-color: lightblue; */
+            display: flex;
+        }
+        .flex-2 {
+            flex: 2;
+            padding: 10px 10px;
+            /* background-color: lightcoral; */
+            display: flex;
+        }
+        .flex-10 {
+            flex: 10;
+            /* background-color: lightgray; */
+            padding: 10px 10px;
+            display: flex;
+        }
+        .flex-4 {
+            flex: 4;
+            /* background-color: lightgreen; */
+            padding: 10px 10px;
+            display: flex;
+        }
+        .nav,.content,.topic,.inform { /* 给div加边框 */
+            border: 1px solid;
+            margin: 3px;
+        }
+        /* nav style */
+        .nav {
+            padding: 5px;
+
+        }
+        .nav-left {
+            flex: 3;
+            border: 1px solid;
+            margin: 1px;
+        }
+        .nav-right {
+            flex: 7;
+            border: 1px solid;
+            margin: 1px;
+        }
+        /* Content Style */
+        .content {
+            padding: 5px;
+            flex-direction: column;
+        }
+        .content-top, .content-down {
+            flex: 5;
+            border: 1px solid;
+            padding: 5px;
+            margin: 2px;
+            display: flex;
+        }
+        .content-top-left, .content-top-right {
+            flex: 5;
+            border: 1px solid;
+            margin: 2px;
+        }
+        .content-top-left {
+            display: flex;
+            flex-direction: column;
+        }
+        .content-top-left-top, .content-top-left-down{
+            flex: 5;
+            border: 1px solid;
+            margin: 2px;
+        }
+        .content-top-left-down {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .content-top-left-down-1,.content-top-left-down-2,.content-top-left-down-3,.content-top-left-down-4 {
+            flex: 1;
+            min-width: 45%;
+            max-width: 50%;
+            border: 1px solid;
+            margin: 2px;
+        }
+        /* -------------------------- */
+        .content-top-right {
+            display: flex;
+            flex-direction: column;
+
+        }
+        .content-top-right-top {
+
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .content-top-right-top,.content-top-right-down{
+            flex: 5;
+            border: 1px solid;
+            margin: 2px;
+        }
+        .content-top-right-top-1,.content-top-right-top-2,.content-top-right-top-3,.content-top-right-top-4 {
+            flex: 1;
+            min-width: 45%;
+            max-width: 50%;
+            border: 1px solid;
+            margin: 2px;
+        }
+        /* -------------------------------------------- */
+        .content-down-left,.content-down-right {
+            display: flex;
+            /* flex-direction: column; */
+        }
+        .content-down-left,.content-down-right{
+            flex: 5;
+            border: 1px solid;
+            margin: 2px;
+            min-height: 75%;
+            /* min-width: 45%;
+            max-width: 50%; */
+
+        }
+        .topic-1,.topic-2,.topic-3,.topic-4,.topic-5{
+            flex: 5;
+            border: 1px solid;
+            margin: 2px;
+
+
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="nav flex-1">
+            <div class="nav-left"></div>
+            <div class="nav-right"></div>
+        </div>
+
+
+        <div class="content flex-10">
+            <h3 style="text-align: center; 
+                        margin: 10px;
+                        ">北大 要闻</h3>
+            <div class="content-top">
+                <div class="content-top-left">
+                    <div class="content-top-left-top"></div>
+                    <div class="content-top-left-down">
+                        <div class="content-top-left-down-1">1</div>
+                        <div class="content-top-left-down-2">2</div>
+                        <div class="content-top-left-down-3">3</div>
+                        <div class="content-top-left-down-4">4</div>
+                    </div>
+                </div>
+                <div class="content-top-right">
+                    <div class="content-top-right-top">
+                        <div class="content-top-right-top-1">1</div>
+                        <div class="content-top-right-top-2">2</div>
+                        <div class="content-top-right-top-3">3</div>
+                        <div class="content-top-right-top-4">4</div>
+                    </div>
+                    <div class="content-top-right-down">
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-down" style="
+                            flex-wrap: wrap;
+                            ">
+                <h3 style="text-align: center; 
+                            margin: 10px; 
+                            min-width: 100%;
+                            max-height: 25%;
+                            ">合作 交流</h3>
+                <div class="content-down-left">1</div>
+                <div class="content-down-right">2</div>
+
+            </div>
+        </div>
+
+
+        <div class="topic flex-4">
+            <div class="topic-1" style="
+                    display: flex;
+                    justify-content: center;
+                ">
+                <h3 style="
+                    writing-mode: vertical-lr;
+                    margin: auto;
+
+                ">专题&bull;网站</h3>
+            </div>
+            <div class="topic-2">2</div>
+            <div class="topic-3">3</div>
+            <div class="topic-4">4</div>
+            <div class="topic-5">5</div>
+        </div>
+        <div class="inform flex-2"></div>
+    </div>
+</body>
+</html>
